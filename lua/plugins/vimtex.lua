@@ -7,7 +7,7 @@ return {
     -- lazy load will make inverse search wrong, refer to `:h vimtex`
     -- ft = "tex",
     config = function()
-        vim.opt.conceallevel=2
+        -- vim.opt.conceallevel=2
         vim.g.tex_flavor='latex'
         -- 映射VimtexCountWords！\lw 在命令模式下enter此命令可统计中英文字符的个数
         vim.g.vimtex_texcount_custom_arg=' -ch -total'

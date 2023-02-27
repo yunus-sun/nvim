@@ -2,6 +2,7 @@
 -- https://github.com/akinsho/toggleterm.nvim
 return {
 	"akinsho/toggleterm.nvim",
+    enabled = true,
     keys = { "<c-\\>" },
 	config = function()
 		require("toggleterm").setup({

@@ -52,10 +52,10 @@ vim.opt.showmatch = true
 
 
 -- Systems: {{{
--- FIX:
-vim.cmd([[
-let g:python3_host_prog = 'D:\Software\Python\python.exe'
-]])
+vim.g.python3_host_prog = 'D:/Software/Miniconda/python.exe'
+-- test command
+-- :echo g:python3_host_prog
+
 
 -- Vim shares register with system clipboard
 -- FIX:

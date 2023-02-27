@@ -2,6 +2,7 @@ return {
     "neoclide/coc.nvim",
     lazy = false,
     init = function()
+        vim.g.coc_python_server_path = 'D:/Software/Miniconda/python.exe'
         -- Some servers have issues with backup files, see #649
         vim.opt.backup = false
         vim.opt.writebackup = false
@@ -147,9 +148,9 @@ return {
         keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
         keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
         keyset("i", "<C-f>",
-               'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+            'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
         keyset("i", "<C-b>",
-               'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+            'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
         keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
         keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 

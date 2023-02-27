@@ -12,6 +12,7 @@ return {
     -- init = function()
     --     vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'
     -- end
+    enabled = false,
     keys = {
         { "<LEADER>dd", "<CMD>call vimspector#Launch()<CR>", "n", { noremap = true, silent = true } },
         { "<LEADER>dd", "<CMD>call vimspector#Continue()<CR>", "n", { noremap = true, silent = true } },

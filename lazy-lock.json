@@ -14,6 +14,9 @@
   "neo-tree.nvim": { "branch": "v2.x", "commit": "8238865e1d9c61f1a260c290653f2c419503e0a9" },
   "noice.nvim": { "branch": "main", "commit": "34f7cf628666c6eb0c93fbe8a0490e977ac78b7b" },
   "nui.nvim": { "branch": "main", "commit": "d147222a1300901656f3ebd5b95f91732785a329" },
+  "nvim-dap": { "branch": "master", "commit": "0d77088e0a3532ae653996abbefb8d951b4ed7ac" },
+  "nvim-dap-ui": { "branch": "master", "commit": "100c67dd63c870819fb998fec4867b17d02db4b7" },
+  "nvim-dap-virtual-text": { "branch": "master", "commit": "7f7f2af549e72a0b7bddc3b4f827beb027ea8ce3" },
   "nvim-notify": { "branch": "master", "commit": "bdd647f61a05c9b8a57c83b78341a0690e9c29d7" },
   "nvim-treesitter": { "branch": "master", "commit": "24d5be6e7192a855a0eba21829717614fa1cf54e" },
   "nvim-treesitter-context": { "branch": "master", "commit": "cacee4828152dd3a83736169ae61bbcd29a3d213" },
@@ -49,7 +52,6 @@
   "vim-snippets": { "branch": "main", "commit": "9d2d3e55e39969091d837c92a6e2b1787dc0345b" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-xtabline": { "branch": "master", "commit": "ccfa687d4f8d34bc2e23facc9b92c3abb90e5f93" },
-  "vimspector": { "branch": "master", "commit": "ecf0c51b07ffedeca054581623bdda0d458e39d2" },
   "vimtex": { "branch": "master", "commit": "8ef5b0d9b85e7bb57b00b4571db4804aec0e10eb" },
   "vista.vim": { "branch": "master", "commit": "33774aff5d8b224f24c2e4c6015c613c1a17bf74" },
   "which-key.nvim": { "branch": "main", "commit": "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531" }
