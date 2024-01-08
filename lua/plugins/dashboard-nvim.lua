@@ -7,7 +7,6 @@
 -- 2. file path is so long that cannot display ina proper width.
 return {
     'glepnir/dashboard-nvim',
-    -- enabled = false, -- FIX: cannot fix the bug!
     enabled = true,
     event = 'VimEnter',
     dependencies = { {'nvim-tree/nvim-web-devicons'}, {'nvim-telescope/telescope.nvim'}},
@@ -18,7 +17,7 @@ return {
                 enable = true,
             },
             shortcut = {
-                { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+                { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
                 {
                     desc = ' Files',
                     group = 'Label',
@@ -30,15 +29,18 @@ return {
                     group = 'DiagnosticHint',
                     action = 'Telescope app',
                     key = 'a',
+                    -- TODO: how to use and config it?
                 },
                 {
                     desc = ' dotfiles',
                     group = 'Number',
                     action = 'Telescope dotfiles',
                     key = 'd',
+                    -- TODO: how to use and config it?
                 },
             },
-            footer = {' 🚀 We Choose to Go to the Moon! 🚀 '},
+            -- footer = {' 🚀 We Choose to Go to the Moon! 🚀 '},
+            footer = {' 󱓟 We Choose to Go to the Moon! 󱓟 '},
         },
     },    --  config used for theme
     hide = {

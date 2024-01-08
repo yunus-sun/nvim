@@ -8,6 +8,7 @@ return {
     -- lazy load will make inverse search wrong, refer to `:h vimtex`
     -- ft = "tex",
     config = function()
+        vim.g.vimtex_indent_enabled = 0 -- close the indent
         -- vim.opt.conceallevel=2
         vim.g.tex_flavor='latex'
         -- 映射VimtexCountWords！\lw 在命令模式下enter此命令可统计中英文字符的个数
@@ -67,5 +68,20 @@ return {
     -- nnoremap \lt :VimtexTocOpen<CR>
     keys = function()
         vim.keymap.set('n', '\\lt', '<CMD>VimtexTocOpen<CR>')
+        -- change 's' to '-'
+        -- vim.keymap.set('n', 'd-e', '<plug>(vimtex-env-delete)')
+        -- vim.keymap.set('n', 'd-c', '<plug>(vimtex-cmd-delete)')
+        -- vim.keymap.set('n', 'd-$', '<plug>(vimtex-env-delete-math)')
+        -- vim.keymap.set('n', 'd-d', '<plug>(vimtex-delim-delete)')
+        -- vim.keymap.set('n', 'c-e', '<plug>(vimtex-env-change)')
+        -- vim.keymap.set('n', 'c-c', '<plug>(vimtex-cmd-change)')
+        -- vim.keymap.set('n', 'c-$', '<plug>(vimtex-env-change-math)')
+        -- vim.keymap.set('n', 'c-d', '<plug>(vimtex-delim-change-math)')
+        -- vim.keymap.set('n', 't-f', '<plug>(vimtex-cmd-toggle-frac)')
+        -- vim.keymap.set('n', 't-c', '<plug>(vimtex-cmd-toggle-star)')
+        -- vim.keymap.set('n', 't-e', '<plug>(vimtex-env-toggle-star)')
+        -- vim.keymap.set('n', 't-$', '<plug>(vimtex-env-toggle-math)')
+        -- vim.keymap.set('n', 't-d', '<plug>(vimtex-delim-toggle-modifier)')
+        -- vim.keymap.set('n', 't-D', '<plug>(vimtex-delim-toggle-modifier-reverse)')
     end
 }

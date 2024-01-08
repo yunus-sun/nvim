@@ -11,8 +11,6 @@ keymap('n', ';', ':', opts)
 keymap('v', ';', ':', opts)
 keymap('n', ';;', ';', opts) -- it may no need due to leap.nvim
 
--- keymap('i', 'jj', '<ESC>', opts) -- timeout settings will help this become more useful
-
 -- HACK: not supportted in lazy.nvim
 -- keymap('n', '<LEADER>ss', '<CMD>source $MYVIMRC<CR>', opts)
 keymap('n', '<LEADER>ee', '<CMD>e $MYVIMRC<CR>', opts)
@@ -57,7 +55,7 @@ keymap('n', '<leader>tl', '<CMD>tabn<CR>', opts)
 
 -- Split Windows
 -- s can be replaced by cl, but it is used in leap.vim
-keymap('', '<LEADER>sv', '<CMD>set splitright<CR>:vsplit<CR>', opts)
+keymap('', '<LEADER>sv', '<CMD>set splitright<CR>:vsplit<CR>', opts) -- TODO: will be canceled due to it can be realized by ';vs' with lsp completion.
 keymap('', '<LEADER>sp', '<CMD>set splitbelow<CR>:split<CR>', opts)
 -- move the split windows
 keymap('', '<LEADER>sj', '<C-w>j', opts)

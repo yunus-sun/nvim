@@ -10,8 +10,6 @@ return{
     lazy = true,
     ft = {'python'},
     build = ':UpdateRemotePlugins', -- By manual?
-    -- init = function()
-    -- end,
     config = function()
         function MagmaInitPython()
             vim.cmd[[
@@ -19,29 +17,23 @@ return{
             :MagmaEvaluateArgument a=5
             ]]
         end
-
         -- function MagmaInitCSharp()
         --     vim.cmd[[
         --     :MagmaInit .net-csharp
         --     :MagmaEvaluateArgument Microsoft.DotNet.Interactive.Formatting.Formatter.SetPreferredMimeTypesFor(typeof(System.Object),"text/plain");
         --     ]]
         -- end
-
         -- function MagmaInitFSharp()
         --     vim.cmd[[
         --     :MagmaInit .net-fsharp
         --     :MagmaEvaluateArgument Microsoft.DotNet.Interactive.Formatting.Formatter.SetPreferredMimeTypesFor(typeof<System.Object>,"text/plain")
         --     ]]
         -- end
-
         vim.cmd[[
         :command MagmaInitPython lua MagmaInitPython()
         " :command MagmaInitCSharp lua MagmaInitCSharp()
         " :command MagmaInitFSharp lua MagmaInitFSharp()
         ]]
-        -- vim.cmd[[
-        -- nnoremap <expr><silent> <Leader>r  nvim_exec('MagmaEvaluateOperator', v:true)
-        -- ]]
 
         vim.api.nvim_set_var("magma_automatically_open_output", true)
         vim.api.nvim_set_var("magma_image_provider", "ueberzug")

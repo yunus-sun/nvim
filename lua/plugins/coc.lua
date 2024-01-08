@@ -1,9 +1,10 @@
 return {
     "neoclide/coc.nvim",
+    branch = "release",
     enabled = false,
     lazy = false,
     init = function()
-        vim.g.coc_python_server_path = 'D:/Software/Miniconda/python.exe'
+        -- vim.g.coc_python_server_path = 'D:/Software/Miniconda/python.exe'
         -- Some servers have issues with backup files, see #649
         vim.opt.backup = false
         vim.opt.writebackup = false

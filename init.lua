@@ -161,8 +161,15 @@ local settings = {
     },
 }
 
+-- Load basic settings
 require("basic.settings")
 require("basic.keybindings")
 require("basic.autocmd")
 
-require("lazy").setup("plugins", settings)
+-- Lazy load plugins
+require("lazy").setup({
+    spec = {
+        { import = "plugins", opts = settings },
+        { import = "themes", opts = settings },
+    }
+})

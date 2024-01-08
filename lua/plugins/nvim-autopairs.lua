@@ -4,7 +4,7 @@ return {
     "windwp/nvim-autopairs",
     -- FIX: disable this plugin, it will confilct with coc.nvim
     -- Lookfor: https://superuser.com/questions/1734914/neovim-coc-nvim-enter-key-doesnt-work-to-autocomplete
-    enabled = false,
+    enabled = true,
     event = "InsertEnter",
     config = function()
         local npairs = require("nvim-autopairs")

@@ -3,7 +3,7 @@
 -- `<Space>`, `=`, `:`, `.`, `|`, `&`, `#`, and `,`.
 return {
     "junegunn/vim-easy-align",
-    enabled = false,
+    enabled = true,
     keys = {
         -- Start interactive EasyAlign in visual mode (e.g. vipga)
         { "ga", "<Plug>(EasyAlign)", "x", { noremap = false, silent = true } },

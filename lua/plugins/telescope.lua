@@ -69,6 +69,12 @@ return {
             "n",
             { noremap = true, silent = true, desc = "Telescope asynctasks" },
         },
+        {
+            "<leader>fd",
+            "<cmd>lua require'telescope.builtin'.diagnostics{bufnr=0} <CR>",
+            "n",
+            { noremap = true, silent = true, desc = "Telescope diagnostics" },
+        },
     },
     config = function()
         require("telescope").setup({
@@ -137,13 +143,22 @@ return {
                 set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
                 mappings = {
                     i = {
-                        ["<C-f>"] = require("telescope.actions").preview_scrolling_down,
-                        ["<C-b>"] = require("telescope.actions").preview_scrolling_up,
+                        ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+                        ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+                        ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+                        ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
                         ["<C-u>"] = false,
                         ["<C-d>"] = false,
                         ["<C-q>"] = require("telescope.actions").smart_send_to_qflist
                         + require("telescope.actions").open_qflist,
                     },
+                    n = {
+                        ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+                        ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+                        ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+                        ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
+                    },
+                    -- TODO: more customized mappings can be defined.
                 },
             },
             pickers = {

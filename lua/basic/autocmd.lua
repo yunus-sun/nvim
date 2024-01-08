@@ -2,16 +2,6 @@
 -- From: Vigil
 -- @see http://blog.bs2.to/post/EdwardLee/17961
 
--- Wsl的nvim与Windows系统剪切板通信
-if vim.fn.has('wsl') then
-  vim.cmd [[
-  augroup Yank
-  autocmd!
-  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
-  augroup END
-  ]]
-end
-
 -- FIX:
 vim.cmd([[
 function! RemoveTrailingWhitespace()
@@ -26,25 +16,26 @@ endfunction
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 ]])
 
--- FIX:
--- NOTE: Two Functions!!
--- vim 文件折叠方式为 marker
-vim.cmd([[
-augroup ft_vim
-    au!
+-- -- FIX:
+-- -- NOTE: Two Functions!!
+-- -- vim 文件折叠方式为 marker
+-- vim.cmd([[
+-- augroup ft_vim
+--     au!
 
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType lua setlocal foldmethod=marker
-    " or?
+--     autocmd FileType vim setlocal foldmethod=marker
+--     autocmd FileType lua setlocal foldmethod=marker
+--     " or?
 
-    " 打开文件总是定位到上次编辑的位置
-    autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+--     " 打开文件总是定位到上次编辑的位置
+--     autocmd BufReadPost *
+--       \ if line("'\"") > 1 && line("'\"") <= line("$") |
+--       \   exe "normal! g`\"" |
+--       \ endif
 
-augroup END
-]])
+-- augroup END
+-- ]])
+
 -- 重新打开缓冲区恢复光标位置
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",

@@ -53,38 +53,28 @@ vim.opt.showmatch = true
 -- Systems: {{{
 -- Find the path
 -- which python3
-vim.g.python3_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = '/home/yunus/miniconda3/bin/python'
 -- check
 -- :echo g:python3_host_prog
 
 
 -- Vim shares register with system clipboard
--- FIX:
-vim.cmd([[
-set clipboard+=unnamed
-]])
--- += does not equal to =
--- vim.opt.clipboard = 'unnamed'
+-- NOTE: win32yank is needed: scoop install win32yank, refer to https://github.com/neovim/neovim/issues/6227
+vim.api.nvim_command('set clipboard+=unnamed')
 
--- FIX:
--- vim.opt.spellcheck = true
 
 -- Timeout Setting
 vim.opt.timeout = true
-vim.opt.updatetime = 100 -- update interval for gitsigns
 vim.opt.timeoutlen = 500 -- keymap timeout
+vim.opt.updatetime = 100 -- update interval for gitsigns
 --- }}}
 
 -- FileType Related {{{
 -- FIX:
--- vim识别不同文件格式
-vim.cmd([[
-filetype on
-filetype indent on
-filetype plugin on
-filetype plugin indent on
-]])
--- vim.opt.filetype = "plugin"
+vim.api.nvim_command('filetype on')
+vim.api.nvim_command('filetype indent on')
+vim.api.nvim_command('filetype plugin on')
+vim.api.nvim_command('filetype plugin indent on')
 
 -- }}}
 
@@ -95,12 +85,12 @@ filetype plugin indent on
 -- }}}
 
 -- Fold Files {{{
-vim.opt.foldenable = true
--- vim.opt.foldmethod = 'manual'
--- vim.opt.foldmethod = 'syntax'
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99 -- indicate all not fold
+-- vim.opt.foldenable = true
+-- -- vim.opt.foldmethod = 'manual'
+-- -- vim.opt.foldmethod = 'syntax'
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99 -- indicate all not fold
 
 -- }}}
 
@@ -130,18 +120,6 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 ]])
 
--- 不显示工具/菜单栏
--- FIX:
-vim.cmd([[
-set guioptions-=T
-set guioptions-=m
-set guioptions-=L
-set guioptions-=r
-set guioptions-=b
-" 使用内置 tab 样式而不是 gui
-set guioptions-=e
-]])
-
 -- " 不同模式光标转换
 -- FIX:
 vim.cmd([[
@@ -163,10 +141,10 @@ vim.opt.splitbelow = true
 
 -- Fix:
 -- To solve color problem in vim
-vim.cmd([[
-set t_Co=256
-]])
-
+-- FIX:
+-- vim.cmd([[
+-- set t_Co=256
+-- ]])
 vim.opt.termguicolors = true
 
 -- Set background transparent
@@ -195,6 +173,15 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true -- 高亮显示当前行
+-- Sets colors to line numbers Above, Current and Below  in this order
+function LineNumberColors()
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
+end
+LineNumberColors()
+-- TODO: should define in autocmd or in color plugin like 'onedark.lua', autocomd.lua is better, but I cannot do it.
+
 vim.opt.wrap = true -- 自动换行
 vim.opt.showcmd = true -- 显示指令
 vim.opt.wildmenu = true -- 增强模式的命令行补全
@@ -210,10 +197,6 @@ set indentexpr=
 -- vim.opt.indentexpr = ''
 
 vim.opt.hlsearch = true
--- FIX:
-vim.cmd([[
-exec "nohlsearch"
-]])
 vim.opt.incsearch = true -- 边搜索边高亮
 
 vim.opt.ignorecase = true
@@ -223,12 +206,6 @@ vim.opt.smartcase = true
 vim.opt.list = true -- will show the unreadable chars
 vim.opt.listchars = 'tab:▸\\ ,trail:▫'
 
--- FIX:
-vim.cmd([[
-" set nocompatible
-" set nobackup
-" set noswapfile
-]])
 vim.opt.compatible = false
 vim.opt.backup = false
 vim.opt.writebackup = false
@@ -236,14 +213,9 @@ vim.opt.swapfile = false
 
 vim.opt.history = 1024
 vim.opt.autochdir = true
+vim.opt.bomb = false
+vim.opt.backspace = 'indent,eol,start'
 vim.opt.whichwrap = 'b,s,<,>,[,]'
--- FIX:
-vim.cmd([[
-set nobomb
-set backspace=indent,eol,start whichwrap+=<,>,[,]
-]])
--- vim.opt.nobomb = true
--- vim.opt.backspace = 'indent,eol,start whichwrap+=<,>,[,]'
 
 -- }}}
 
@@ -251,11 +223,7 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencodings = 'utf-8,gbk2312,gbk,gb18030,cp936'
 vim.opt.langmenu = 'en_US'
--- FIX:?
--- vim.cmd("language en_US.utf8") -- bug in linux
--- FIX:
-vim.cmd([[
-let $LANG = 'en_US.UTF-8'
-]])
+vim.cmd("language en_US.utf8")
+vim.cmd("let $LANG = 'en_US.UTF-8'")
 
 -- }}}

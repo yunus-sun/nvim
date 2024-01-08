@@ -1,6 +1,7 @@
+-- NOTE: not good to use
 return {
     "rhysd/accelerated-jk",
-    enabled = false, -- FIX: not good to use
+    enabled = false,
     keys = {
         -- { "j", "<Plug>(accelerated_jk_gj)", "n", { noremap = true, silent = true } },
         -- { "k", "<Plug>(accelerated_jk_gk)", "n", { noremap = true, silent = true } },

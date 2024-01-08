@@ -9,6 +9,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     enabled = true,
+    lazy = true,
     build = ":TSUpdate",
     event = "VimEnter",
     dependencies = {
@@ -19,6 +20,9 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         "nvim-treesitter/playground",
     },
+    init = function()
+        vim.g.skip_ts_context_commentstring_module = true
+    end,
     config = function()
         -- proxy
         -- for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
@@ -31,8 +35,6 @@ return {
         for i, c in ipairs(rainbow) do -- p00f/rainbow#81
             vim.cmd(("hi rainbowcol%d guifg=%s"):format(i, c))
         end
-
-        vim.g.skip_ts_context_commentstring_module = true,
 
         require("nvim-treesitter.configs").setup({
             -- HACK:
@@ -52,21 +54,15 @@ return {
                 "markdown",
                 "markdown_inline",
                 -- FIX:
-                -- "latex",
                 -- 看起来似乎不是很好用，反而不如用专业的插件？
+                -- "latex",
                 -- TODO:
                 -- "matlab",
             },
             sync_install = true,
             highlight = {
                 enable = true,
-                disable = function(lang, buf)
-                    local max_filesize = 100 * 1024 -- 100 KB
-                    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-                    if ok and stats and stats.size > max_filesize then
-                        return true
-                    end
-                end,
+                disable = { "latex" }, -- cause error for auto snip in math enviroment https://github.com/lervag/vimtex/issues/2346
                 additional_vim_regex_highlighting = { "org" },
             },
             incremental_selection = {
@@ -218,6 +214,6 @@ return {
         -- Separator between context and content. Should be a single character string, like '-'.
         -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
         separator = nil,
-    })
-end,
+        })
+    end,
 }
