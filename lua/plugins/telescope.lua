@@ -45,7 +45,8 @@ return {
         { "<leader>fg", "<cmd>Telescope live_grep<CR>", "n", { noremap = true, silent = true } },
         { "<leader>fh", "<cmd>Telescope help_tags<CR>", "n", { noremap = true, silent = true } },
         { "<leader>fo", "<cmd>Telescope oldfiles<CR>", "n", { noremap = true, silent = true } },
-        { "<leader>fm", "<cmd>Telescope marks<CR>", "n", { noremap = true, silent = true } },
+        { "<leader>fm", "<cmd>Telescope marks<CR>", "n", { noremap = true, silent = true } }, -- TODO: the usage of this key?
+        -- { "<leader>fm", "<cmd>Telescope bookmarks list<CR>", "n", { noremap = true, silent = true } },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", "n", { noremap = true, silent = true } },
         { "<leader>FB", "<cmd>Telescope file_browser<CR>", "n", { noremap = true, silent = true } },
         -- NOTE:
@@ -88,7 +89,8 @@ return {
                 layout_config = {
                     bottom_pane = {
                         height = 0.5,
-                        preview_cutoff = 120,
+                        width = 0.5,
+                        preview_cutoff = 80,
                         prompt_position = "bottom",
                     },
                     center = {
@@ -157,6 +159,8 @@ return {
                         ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
                         ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
                         ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
+                        ["s"] = require("telescope.actions").select_horizontal,
+                        ["S"] = require("telescope.actions").select_vertical,
                     },
                     -- TODO: more customized mappings can be defined.
                 },
@@ -235,12 +239,12 @@ return {
                         preview_cutoff = 0,
                     },
                 },
-                diagnostics = {
-                    previewer = false,
-                    layout_config = {
-                        height = 0.3,
-                    },
-                },
+                -- diagnostics = {
+                --     previewer = false,
+                --     layout_config = {
+                --         height = 0.3,
+                --     },
+                -- },
             },
             extensions = {
                 project = {

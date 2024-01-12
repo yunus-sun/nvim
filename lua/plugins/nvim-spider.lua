@@ -1,6 +1,7 @@
+-- FIX: some cases are disturbing.
 return {
     "chrisgrieser/nvim-spider",
-    enabled = true,
+    enabled = false,
     lazy = false,
     keys = {
         {

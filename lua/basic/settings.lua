@@ -174,12 +174,12 @@ vim.opt.relativenumber = true
 
 vim.opt.cursorline = true -- 高亮显示当前行
 -- Sets colors to line numbers Above, Current and Below  in this order
-function LineNumberColors()
-    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
-    vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
-    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
-end
-LineNumberColors()
+-- function LineNumberColors()
+--     vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
+--     vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
+--     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
+-- end
+-- LineNumberColors()
 -- TODO: should define in autocmd or in color plugin like 'onedark.lua', autocomd.lua is better, but I cannot do it.
 
 vim.opt.wrap = true -- 自动换行

@@ -3,16 +3,15 @@ return{
     "kevinhwang91/nvim-ufo",
     enabled = true,
     lazy = false,
-    -- event = "BufEnter",
-    -- cmd = { "UfoDisable", "UfoEnable" },
     dependencies = {
         "kevinhwang91/promise-async",
     },
-    init = function ()
-        vim.o.foldcolumn = "1" -- '0' is not bad
+    init = function()
+        vim.o.foldcolumn = "0" -- '0' is not bad
         vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-        vim.o.foldlevelstart = -1
+        vim.o.foldlevelstart = 99
         vim.o.foldenable = true
+        vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
         -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
         vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
@@ -26,7 +25,6 @@ return{
         vim.cmd([[hi default link UfoPreviewCursorLine Visual]])
         vim.cmd([[hi default link UfoFoldedEllipsis Comment]])
         vim.cmd([[hi default link UfoCursorFoldedLine CursorLine]])
-
     end,
     config = function()
         local handler = function(virtText, lnum, endLnum, width, truncate)
@@ -65,6 +63,7 @@ return{
             -- `handler` is the 2nd parameter of `setFoldVirtTextHandler`,
             -- check out `./lua/ufo.lua` and search `setFoldVirtTextHandler` for detail.
             fold_virt_text_handler = handler,
+            open_fold_hl_timeout = 0,
         })
 
         -- buffer scope handler

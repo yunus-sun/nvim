@@ -1,7 +1,8 @@
+-- replaced by barbar.nvim
 return {
     "mg979/vim-xtabline",
     enabled = false,
-    lazy = false,
+    lazy = true,
     -- FIX:
     -- how to disable the <F5> in xtabline?
     init = function()

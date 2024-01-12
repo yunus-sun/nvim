@@ -7,6 +7,7 @@
 -- WARN:
 -- PERF:
 -- NOTE:
+-- INFO:
 -- TEST:
 -- FIXME:
 -- BUG:
@@ -14,21 +15,22 @@
 -- ISSUE:
 -- OPTIM:
 
-vim.keymap.set("n", "]t", function()
-    require("todo-comments").jump_next()
-end, { desc = "Next todo comment" })
-
-vim.keymap.set("n", "[t", function()
-    require("todo-comments").jump_prev()
-end, { desc = "Previous todo comment" })
-
-vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { noremap = true, desc = "Find todo comments" })
-
 return {
     "folke/todo-comments.nvim",
     enabled = true,
     dependencies = "nvim-lua/plenary.nvim",
     event = "BufRead",
+    init = function()
+        vim.keymap.set("n", "]t", function()
+            require("todo-comments").jump_next()
+        end, { desc = "Next todo comment" })
+
+        vim.keymap.set("n", "[t", function()
+            require("todo-comments").jump_prev()
+        end, { desc = "Previous todo comment" })
+
+        vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { noremap = true, desc = "Find todo comments" })
+    end,
     config = function()
         require("todo-comments").setup({
             signs = true, -- show icons in the signs column

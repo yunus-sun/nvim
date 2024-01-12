@@ -31,13 +31,13 @@ return{
         -- NOTE: Keybinding
         -- FIX: combine it into nvim-cmp, so the followings are deprecated.
         -- vim.keymap.set({"i"}, "<tab>", function() ls.expand() end, {silent = true})
-        -- vim.keymap.set({"i", "s"}, "<C-j>", function() ls.jump( 1) end, {silent = true})
-        -- vim.keymap.set({"i", "s"}, "<C-k>", function() ls.jump(-1) end, {silent = true})
-        -- vim.keymap.set({"i", "s"}, "<C-E>", function()
-        --     if ls.choice_active() then
-        --         ls.change_choice(1)
-        --     end
-        -- end, {silent = true})
+        vim.keymap.set({"i", "s"}, "<C-j>", function() ls.jump( 1) end, {silent = true})
+        vim.keymap.set({"i", "s"}, "<C-k>", function() ls.jump(-1) end, {silent = true})
+        vim.keymap.set({"i", "s"}, "<C-E>", function()
+            if ls.choice_active() then
+                ls.change_choice(1)
+            end
+        end, {silent = true})
 
         -- NOTE: Snippet: config for friendly-snippets
         require("luasnip.loaders.from_vscode").lazy_load()

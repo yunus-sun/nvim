@@ -7,7 +7,14 @@ return {
     -- FIX:
     -- lazy load will make inverse search wrong, refer to `:h vimtex`
     -- ft = "tex",
+    init = function()
+        -- Forward Search
+        vim.g.vimtex_view_general_viewer = 'okular'
+        vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
+        -- Inverse Search only need to configure in the pdf
+    end,
     config = function()
+        vim.g.vimtex_mappings_prefix = '<leader>l'
         vim.g.vimtex_indent_enabled = 0 -- close the indent
         -- vim.opt.conceallevel=2
         vim.g.tex_flavor='latex'
@@ -47,11 +54,6 @@ return {
                 '-interaction=nonstopmode',
             },
         }
-
-        -- Forward Search
-        vim.g.vimtex_view_general_viewer = 'okular'
-        vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
-        -- Inverse Search only need to configure in the pdf
 
         -- Ignore warning message when complie
         vim.g.vimtex_quickfix_open_on_warning=0

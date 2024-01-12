@@ -16,26 +16,6 @@ endfunction
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 ]])
 
--- -- FIX:
--- -- NOTE: Two Functions!!
--- -- vim 文件折叠方式为 marker
--- vim.cmd([[
--- augroup ft_vim
---     au!
-
---     autocmd FileType vim setlocal foldmethod=marker
---     autocmd FileType lua setlocal foldmethod=marker
---     " or?
-
---     " 打开文件总是定位到上次编辑的位置
---     autocmd BufReadPost *
---       \ if line("'\"") > 1 && line("'\"") <= line("$") |
---       \   exe "normal! g`\"" |
---       \ endif
-
--- augroup END
--- ]])
-
 -- 重新打开缓冲区恢复光标位置
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
@@ -47,6 +27,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- remember folds
+-- FIX: not work
+vim.api.nvim_create_autocmd({"BufWinLeave"}, {
+    pattern = {"*.*"},
+    desc = "save view (folds), when closing file",
+    command = "mkview",
+})
+-- vim.api.nvim_create_autocmd({"BufWinEnter"}, {
+--     pattern = {"*.*"},
+--     desc = "load view (folds), when opening file",
+--     command = "silent! loadview"
+--     -- command = "lua print('loadview')"
+-- })
 
 -- FIX:
 vim.cmd([[
@@ -55,6 +48,7 @@ augroup vimrcEx
     autocmd FileType text setlocal textwidth=78
 augroup END
 ]])
+
 
 -- Open help window in a vertical split to the right.
 vim.api.nvim_create_autocmd("BufWinEnter", {
