@@ -1,4 +1,5 @@
 -- TODO: don't know how to use it, config is from https://www.bilibili.com/read/cv22495061/.
+-- BUG: 1. change file leads to bug; 2. cannot save fold view.
 return{
     "kevinhwang91/nvim-ufo",
     enabled = true,

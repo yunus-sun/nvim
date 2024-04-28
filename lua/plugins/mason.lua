@@ -33,6 +33,7 @@ return {
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+            -- local other_servers = { "pyright", "ruff_lsp", "lua_ls", "marksman", "dockerls", "bashls", "texlab", "ltex" }
             local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab", "ltex" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {

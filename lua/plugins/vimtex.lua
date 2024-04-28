@@ -27,7 +27,7 @@ return {
         -- 这里是LaTeX编译引擎的设置，这里默认LaTeX编译方式为-pdf(pdfLaTeX),
         -- vimtex提供了magic comments来为文件设置编译方式
         -- 例如，我在tex文件开头输入 % !TEX program = xelatex   即指定-xelatex （xelatex）编译文件
-        vim.g.vimtex_compiler_progname = 'nvr'
+        -- vim.g.vimtex_compiler_progname = 'nvr'
         vim.g.vimtex_compiler_latexmk_engines = {
             _                = '-pdf',
             pdflatex         = '-pdf',
@@ -38,22 +38,25 @@ return {
             ['context (luatex)'] = '-pdf -pdflatex=context',
             ['context (xetex)']  = '-pdf -pdflatex=\'texexec --xtx\'',
             bibxelatex       = '-xelatex -bibtex -xelatex -xelatex ',
+            IEEE       = '-pdflatex -pdflatex -bibtex -pdflatex ',
+            beamer       = '-xelatex -biber -xelatex -xelatex ',
+            -- Above tow lines are not validated.
         }
-        -- 这里是设置latexmk工具的可选参数
-        vim.g.vimtex_compiler_latexmk = {
-            build_dir = '',
-            callback = 1,
-            continuous = 1,
-            executable = 'latexmk',
-            hooks = {},
-            options = {
-                '-verbose',
-                '-file-line-error',
-                '-shell-escape',
-                '-synctex=1',
-                '-interaction=nonstopmode',
-            },
-        }
+        -- -- 这里是设置latexmk工具的可选参数
+        -- vim.g.vimtex_compiler_latexmk = {
+        --     build_dir = '',
+        --     callback = 1,
+        --     continuous = 1,
+        --     executable = 'latexmk',
+        --     hooks = {},
+        --     options = {
+        --         '-verbose',
+        --         '-file-line-error',
+        --         '-shell-escape',
+        --         '-synctex=1',
+        --         '-interaction=nonstopmode',
+        --     },
+        -- }
 
         -- Ignore warning message when complie
         vim.g.vimtex_quickfix_open_on_warning=0
@@ -71,19 +74,20 @@ return {
     keys = function()
         vim.keymap.set('n', '\\lt', '<CMD>VimtexTocOpen<CR>')
         -- change 's' to '-'
-        -- vim.keymap.set('n', 'd-e', '<plug>(vimtex-env-delete)')
-        -- vim.keymap.set('n', 'd-c', '<plug>(vimtex-cmd-delete)')
-        -- vim.keymap.set('n', 'd-$', '<plug>(vimtex-env-delete-math)')
-        -- vim.keymap.set('n', 'd-d', '<plug>(vimtex-delim-delete)')
-        -- vim.keymap.set('n', 'c-e', '<plug>(vimtex-env-change)')
-        -- vim.keymap.set('n', 'c-c', '<plug>(vimtex-cmd-change)')
-        -- vim.keymap.set('n', 'c-$', '<plug>(vimtex-env-change-math)')
-        -- vim.keymap.set('n', 'c-d', '<plug>(vimtex-delim-change-math)')
-        -- vim.keymap.set('n', 't-f', '<plug>(vimtex-cmd-toggle-frac)')
-        -- vim.keymap.set('n', 't-c', '<plug>(vimtex-cmd-toggle-star)')
-        -- vim.keymap.set('n', 't-e', '<plug>(vimtex-env-toggle-star)')
-        -- vim.keymap.set('n', 't-$', '<plug>(vimtex-env-toggle-math)')
-        -- vim.keymap.set('n', 't-d', '<plug>(vimtex-delim-toggle-modifier)')
-        -- vim.keymap.set('n', 't-D', '<plug>(vimtex-delim-toggle-modifier-reverse)')
+        -- change 's' to 'o'
+        vim.keymap.set('n', 'doe', '<plug>(vimtex-env-delete)')
+        vim.keymap.set('n', 'doc', '<plug>(vimtex-cmd-delete)')
+        vim.keymap.set('n', 'do$', '<plug>(vimtex-env-delete-math)')
+        vim.keymap.set('n', 'dod', '<plug>(vimtex-delim-delete)')
+        vim.keymap.set('n', 'coe', '<plug>(vimtex-env-change)')
+        vim.keymap.set('n', 'coc', '<plug>(vimtex-cmd-change)')
+        vim.keymap.set('n', 'co$', '<plug>(vimtex-env-change-math)')
+        vim.keymap.set('n', 'cod', '<plug>(vimtex-delim-change-math)')
+        vim.keymap.set('n', 'tof', '<plug>(vimtex-cmd-toggle-frac)')
+        vim.keymap.set('n', 'toc', '<plug>(vimtex-cmd-toggle-star)')
+        vim.keymap.set('n', 'toe', '<plug>(vimtex-env-toggle-star)')
+        vim.keymap.set('n', 'to$', '<plug>(vimtex-env-toggle-math)')
+        vim.keymap.set('n', 'tod', '<plug>(vimtex-delim-toggle-modifier)')
+        vim.keymap.set('n', 'toD', '<plug>(vimtex-delim-toggle-modifier-reverse)')
     end
 }

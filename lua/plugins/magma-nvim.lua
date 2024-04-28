@@ -4,9 +4,10 @@ local opts = {noremap = true, silent = true}
 -- 1. To install ueberzug, please use the douban source to pip
 -- 2. bug fix: https://blog.csdn.net/barlinbento/article/details/111572023
 -- 3. pip install jupyter
+-- FIX: some bugs, molten-nvim is the alternative.
 return{
     "dccsillag/magma-nvim",
-    enabled = true,
+    enabled = false,
     lazy = true,
     ft = {'python'},
     build = ':UpdateRemotePlugins', -- By manual?

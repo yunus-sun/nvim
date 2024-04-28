@@ -2,7 +2,7 @@
 
 return {
     "ggandor/leap.nvim",
-    enabled = true,
+    enabled = false,
     lazy = false,
     config = function()
         -- Mapping operate symbols

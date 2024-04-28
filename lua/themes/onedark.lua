@@ -8,13 +8,15 @@ return {
         -- load the colorscheme here
         vim.cmd([[colorscheme onedark]])
         -- configurations
+        -- NOTE: cancel it for coloring the line within git plugins, and this function is less meaningful
+        --
         -- Sets colors to line numbers Above, Current and Below  in this order
-        function LineNumberColors()
-            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
-            vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
-            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
-        end
-        LineNumberColors()
+        -- function LineNumberColors()
+        --     vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
+        --     vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
+        --     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
+        -- end
+        -- LineNumberColors()
         require('onedark').setup  {
             -- Main options --
             style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
