@@ -1,7 +1,7 @@
 -- Add a dictionary: https://github.com/uga-rosa/cmp-dictionary/wiki/Examples-of-usage
--- sudo aspell -d en dump master | aspell -l en expand > /home/yunus/nvim-cmp-dict.dict
+-- sudo aspell -d en dump master | aspell -l en expand > ~/nvim-cmp-dict.dict
 local dict = {
-    ["*"] = { "/home/yunus/nvim-cmp-dict.dict" },
+    ["*"] = { "~/nvim-cmp-dict.dict" },
     -- ft = {
     --     foo = { "/path/to/foo.dict" },
     -- },

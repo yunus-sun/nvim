@@ -1,0 +1,5 @@
+Telescope:
+sudo apt install make gcc fzf
+
+cmp-dictionary:
+sudo aspell -d en dump master | aspell -l en expand > ~/nvim-cmp-dict.dict

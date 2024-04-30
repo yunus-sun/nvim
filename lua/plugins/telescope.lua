@@ -3,7 +3,7 @@
 
 -- Install:
 -- 1. For fzf-native: https://github.com/nvim-telescope/telescope-fzf-native.nvim
--- scoop install make & MinGW & fzf
+-- sudo apt install make gcc fzf
 -- 2. For sqlite: https://github.com/kkharji/sqlite.lua
 -- sudo apt-get install sqlite3 libsqlite3-dev # Ubuntu
 -- 3. https://github.com/jyf-111/nvim
