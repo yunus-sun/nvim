@@ -1,0 +1,13 @@
+Install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+Telescope:
+sudo apt install make gcc fzf ripgrep sqlite3 libsqlite3-dev
+
+cmp-dictionary:
+sudo aspell -d en dump master | aspell -l en expand > ~/nvim-cmp-dict.dict
+sudo apt install wordnet
+
+Vim shares register with system clipboard:
+scoop install win32yank (in Windows)
+sudo ln -s /mnt/d/Scoop/apps/scoop/win32yank/current/ /usr/bin/win32yank

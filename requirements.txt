@@ -1,5 +1,7 @@
-Telescope:
-sudo apt install make gcc fzf
+For conda:
+mamba
 
-cmp-dictionary:
-sudo aspell -d en dump master | aspell -l en expand > ~/nvim-cmp-dict.dict
+For neovim:
+pynvim
+neovim
+jupyter

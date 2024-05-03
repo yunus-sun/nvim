@@ -1,3 +1,4 @@
+-- ISSUE: replaced by flash.nvim
 return {
     "ggandor/leap-spooky.nvim",
     enabled = false,

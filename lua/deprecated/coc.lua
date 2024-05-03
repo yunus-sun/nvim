@@ -1,3 +1,4 @@
+-- ISSUE: replaced by lsp
 return {
     "neoclide/coc.nvim",
     branch = "release",

@@ -1,4 +1,4 @@
--- NOTE: move to luasnip.
+-- ISSUE: replaced by luasnip.
 return {
     "sirver/ultisnips",
     enabled = false,

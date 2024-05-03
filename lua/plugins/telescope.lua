@@ -5,10 +5,11 @@
 -- 1. For fzf-native: https://github.com/nvim-telescope/telescope-fzf-native.nvim
 -- sudo apt install make gcc fzf
 -- 2. For sqlite: https://github.com/kkharji/sqlite.lua
--- sudo apt-get install sqlite3 libsqlite3-dev # Ubuntu
+-- sudo apt install sqlite3 libsqlite3-dev # Ubuntu
 -- 3. https://github.com/jyf-111/nvim
 -- 如果telescope的history有问题,需要手动创建telescope_history.json
 -- touch vim.fn.stdpath "data" .. '/telescope_history.sqlite3
+-- or delete it?
 
 return {
     "nvim-telescope/telescope.nvim",

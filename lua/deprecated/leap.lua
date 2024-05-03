@@ -1,5 +1,5 @@
+-- ISSUE: replaced by flash.nvim
 -- NOTE: Fast moving.
-
 return {
     "ggandor/leap.nvim",
     enabled = false,

@@ -1,5 +1,5 @@
--- TODO:
--- Alternatives: nvim-dap
+-- ISSUE: replaced by nvim-dap
+
 -- FIX:
 -- Refer to: https://www.cnblogs.com/kongj/p/12831690.html
 -- https://github.com/puremourning/vimspector

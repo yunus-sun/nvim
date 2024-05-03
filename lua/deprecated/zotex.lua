@@ -1,3 +1,5 @@
+-- TODO: try it
+-- FIX: seems not work
 return {
     "tiagovla/zotex.nvim",
     enabled = false,

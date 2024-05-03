@@ -1,4 +1,5 @@
--- FIX: Don't work in WSL!
+-- FIX: Don't work in WSL! seems to need x11
+-- TODO: fix it
 return {
     'img-paste-devs/img-paste.vim',
     enabled = false,

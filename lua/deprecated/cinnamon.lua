@@ -1,4 +1,4 @@
--- FIX: The effect feels mediocre
+-- ISSUE: The effect feels mediocre
 return {
     "declancm/cinnamon.nvim",
     enabled = false,

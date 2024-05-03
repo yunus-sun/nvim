@@ -1,3 +1,4 @@
+-- ISSUE: replaced by remote-sshfs.nvim
 return {
     "amitds1997/remote-nvim.nvim",
     enabled = false,

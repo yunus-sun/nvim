@@ -10,6 +10,7 @@ return {
     "uga-rosa/cmp-dictionary",
     enabled = true,
     lazy = false,
+    dependencies = "nvim-lua/plenary.nvim",
     config = function()
         require("cmp_dictionary").setup({
             paths = dict["*"],

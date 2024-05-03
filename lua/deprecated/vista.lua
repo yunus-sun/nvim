@@ -1,3 +1,5 @@
+-- TODO: try it
+
 -- https://github.com/liuchengxu/vista.vim
 -- View and search LSP symbols, tags in Vim/NeoVim.
 return {

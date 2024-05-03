@@ -1,3 +1,5 @@
+-- ISSUE: replaced by nvim-surround
+
 -- return {
 --     "ur4ltz/surround.nvim",
 --     event = "BufRead",

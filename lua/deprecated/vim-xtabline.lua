@@ -1,4 +1,4 @@
--- replaced by barbar.nvim
+-- ISSUE: replaced by barbar.nvim
 return {
     "mg979/vim-xtabline",
     enabled = false,

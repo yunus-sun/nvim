@@ -1,4 +1,5 @@
 -- BUG: cannot display image for WSL, due to there is no X11.
+-- BUG: cannot find jupyter/runtime/ dir or file. Solution: jupyter notebook start once.
 return{
     "benlubas/molten-nvim",
     enabled = true,

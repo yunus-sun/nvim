@@ -1,5 +1,5 @@
--- FIX:
--- Bugs: nabla.nvim with treesitter would make snippets not work
+-- FIX: nabla.nvim with treesitter would make snippets not work
+-- TODO: the effect?
 return {
     "jbyuki/nabla.nvim",
     enabled = false,

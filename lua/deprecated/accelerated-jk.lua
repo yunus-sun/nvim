@@ -1,4 +1,4 @@
--- NOTE: not good to use
+-- ISSUE: not good to use
 return {
     "rhysd/accelerated-jk",
     enabled = false,

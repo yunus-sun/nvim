@@ -1,3 +1,4 @@
+-- ISSUE: same issues with img-paste.nvim
 return {
     'TobinPalmer/pastify.nvim',
     enabled = false,
