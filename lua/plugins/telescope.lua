@@ -273,5 +273,7 @@ return {
         require("telescope").load_extension("ui-select")
         require("telescope").load_extension("asynctasks")
         require("telescope").load_extension("noice")
+        -- require('telescope').load_extension('macros')
+        -- for NeoComposer.nvim, but inside menu seems better
     end,
 }
