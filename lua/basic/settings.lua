@@ -53,7 +53,8 @@ vim.opt.showmatch = true
 -- Systems: {{{
 -- Find the path
 -- which python3
-vim.g.python3_host_prog = '~/miniconda3/bin/python'
+-- vim.g.python3_host_prog = '~/miniconda3/bin/python'
+-- seems no need
 -- check
 -- :echo g:python3_host_prog
 

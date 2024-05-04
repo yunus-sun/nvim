@@ -11,3 +11,6 @@ sudo apt install wordnet
 Vim shares register with system clipboard:
 scoop install win32yank (in Windows)
 sudo ln -s /mnt/d/Scoop/apps/scoop/win32yank/current/ /usr/bin/win32yank
+
+venv-selector:
+sudo apt install fd-find

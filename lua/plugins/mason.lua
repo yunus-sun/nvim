@@ -24,6 +24,7 @@ return {
                     'ruff-lsp', -- python formatter
                     'black', -- python formatter
                     'texlab', -- for latex
+                    'ltex-ls', -- for text, md, tex
                 },
                 auto_update = true,
                 run_on_start = true,
