@@ -46,13 +46,6 @@ keymap('v', '\\s', ':s//g<left><left>', opts)
 -- % 表示在整个文件中进行替换，s 表示替换，old-text 是要被替换的文本，new-text 是替换后的文本，g 表示全局，即替换所有匹配的文本。
 -- map the \s
 
--- Tab Switch
--- FIX: t is used, but may not effect.
-keymap('n', '<leader>tn', '<CMD>tabnew<CR>', opts)
-keymap('n', '<leader>tc', '<CMD>tabclose<CR>', opts)
-keymap('n', '<leader>th', '<CMD>tabp<CR>', opts)
-keymap('n', '<leader>tl', '<CMD>tabn<CR>', opts)
-
 -- Split Windows
 -- s can be replaced by cl, but it is used in leap.vim
 keymap('', '<LEADER>sv', '<CMD>set splitright<CR>:vsplit<CR>', opts) -- TODO: will be canceled due to it can be realized by ';vs' with lsp completion.
