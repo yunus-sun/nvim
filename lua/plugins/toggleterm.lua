@@ -46,7 +46,7 @@ return {
             terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
             persist_size = true,
             persist_mode = true, -- if set to true (default) the previous terminal mode will be remembered
-            direction = "horizontal", --'vertical' | 'horizontal' | 'tab' | 'float',
+            direction = "float", --'vertical' | 'horizontal' | 'tab' | 'float',
             close_on_exit = true, -- close the terminal window when the process exits
             shell = vim.o.shell, -- change the default shell
             auto_scroll = true, -- automatically scroll to the bottom on terminal output

@@ -1,5 +1,6 @@
 Install nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install node
 
 Telescope:
 sudo apt install make gcc fzf ripgrep sqlite3 libsqlite3-dev
@@ -14,3 +15,6 @@ sudo ln -s /mnt/d/Scoop/apps/scoop/win32yank/current/ /usr/bin/win32yank
 
 venv-selector:
 sudo apt install fd-find
+
+lsp: ltex-ls:
+sudo apt install openjdk-11-jdk
