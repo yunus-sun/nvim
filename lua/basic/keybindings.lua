@@ -118,3 +118,7 @@ nmap <LEADER>fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
 
 -- To map <Esc> to exit terminal-mode:
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
+
+-- Tags jump.
+keymap('n', 'go', '<C-O>', opts)
+-- keymap('n', 'gd', '<C-]>', opts) -- define in nvim-lspconfig

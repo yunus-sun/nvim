@@ -17,7 +17,11 @@ return {
             filetype = {
                 -- For python
                 python = {
+                    -- NOTE: there are some default configurations in formatter.filetypes.python, refer to help.
+
                     require("formatter.filetypes.python").black,
+                    require("formatter.filetypes.python").isort,
+                    -- require("formatter.filetypes.python").autopep8,
                 },
 
                 -- Formatter configurations for filetype "lua" go here

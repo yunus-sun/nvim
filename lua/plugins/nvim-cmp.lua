@@ -28,7 +28,7 @@ return{
                 ["<C-h>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-l>"] = cmp.mapping.scroll_docs(4),
                 -- ["<C-Space>"] = cmp.mapping.complete(), -- The following configuration defines a key mapping to show completion only for vsnip snippets.
-                ["<C-p>"] = cmp.mapping.abort(),
+                ["<C-u>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
         })
