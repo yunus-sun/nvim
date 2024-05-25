@@ -62,7 +62,7 @@ vim.opt.showmatch = true
 -- Vim shares register with system clipboard
 -- NOTE: win32yank is needed: scoop install win32yank, refer to https://github.com/neovim/neovim/issues/6227
 -- FIX: sometimes, it may cause D, S, x, X slow.
-vim.api.nvim_command('set clipboard+=unnamed')
+-- vim.api.nvim_command('set clipboard+=unnamed')
 
 
 -- Timeout Setting
