@@ -30,7 +30,7 @@ keymap('n', '<ESC>', '<CMD>nohlsearch<CR>', opts)
 -- Cursor Movement
 keymap('', 'J', '5j', opts)
 keymap('', 'K', '5k', opts)
-keymap('', 'H', '0', opts)
+keymap('', 'H', '^', opts)
 keymap('', 'L', '$', opts)
 -- keymap('', '<C-w>', '5w', opts) -- <C-w> toggles between the vertical and horizontal splits
 keymap('', '<C-b>', '5b', opts) -- seems not useful due to leap.vim
