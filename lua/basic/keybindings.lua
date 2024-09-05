@@ -122,3 +122,5 @@ keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 -- Tags jump.
 keymap('n', 'go', '<C-O>', opts)
 -- keymap('n', 'gd', '<C-]>', opts) -- define in nvim-lspconfig
+
+keymap('i', '<C-L>', '<End><CR>', opts)
