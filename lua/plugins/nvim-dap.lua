@@ -14,6 +14,8 @@ return {
         local dap=require('dap')
         dap.defaults.python.terminal_win_cmd = 'belowright new'
 
+        -- FIX: When deal with multiprocessing programs, it will broken, so 'subProcess = false' is adopted;
+        -- However, it seems to some other ways to better deal with multiprocessing?
         vim.api.nvim_create_user_command("RunScriptWithArgs", function(t)
             -- :help nvim_create_user_command
             -- args = vim.split(vim.fn.expand(t.args), '\n')
@@ -28,10 +30,12 @@ return {
             )
             if approval == 1 then
                 dap.run({
+                    justMyCode = true,
                     type = vim.bo.filetype,
                     request = 'launch',
                     name = 'Launch file with custom arguments (adhoc)',
                     program = '${file}',
+                    subProcess = false;
                     args = args,
                 })
             end
@@ -56,28 +60,28 @@ return {
         vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStopped', numhl= 'DapStopped' })
 
         -- NOTE: Config for python
-        -- TODO: How to configure for conda?
         local dap = require('dap')
         dap.adapters.python = {
             type = 'executable';
-            -- command = '/usr/bin/python3';
-            command = 'python3';
+            command = 'python';
             args = { '-m', 'debugpy.adapter' };
         }
         dap.configurations.python = {
             {
+                justMyCode = true, -- false can debug into inner functions
                 type = "python";
                 request = "launch";
                 name = "launch file";
                 program = "${file}";
+                cwd = "${fileDirname}";
+                subProcess = false;
                 pythonPath = function ()
-                    return "python3"
+                    return "python"
                 end
             },
         }
 
         -- NOTE: dap-ui
-        local dap = require("dap")
         local dapui = require("dapui")
         dap.listeners.after.event_initialized["dapui_config"] = function()
             dapui.open({})
