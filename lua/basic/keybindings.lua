@@ -33,9 +33,7 @@ keymap('', 'K', '5k', opts)
 keymap('', 'H', '^', opts)
 keymap('', 'L', '$', opts)
 -- keymap('', '<C-w>', '5w', opts) -- <C-w> toggles between the vertical and horizontal splits
-keymap('', '<C-b>', '5b', opts) -- seems not useful due to leap.vim
--- keymap('', '<C-J>', '5<C-e>', opts)
--- keymap('', '<C-K>', '5<C-y>', opts)
+-- keymap('', '<C-b>', '5b', opts) -- seems not useful due to flash or leap plugin & <C-b> is useful
 keymap('', '<C-J>', 'J', opts)
 
 -- Globally Find and Replace
