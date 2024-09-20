@@ -3,7 +3,7 @@
 
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    enabled = true,
+    enabled = false,
     lazy = true,
     event = "BufWinEnter",
     dependencies = {

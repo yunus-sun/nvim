@@ -56,7 +56,7 @@ return {
         { "<leader>fm", "<cmd>Telescope marks<CR>", "n", { noremap = true, silent = true } }, -- TODO: the usage of this key?
         -- { "<leader>fm", "<cmd>Telescope bookmarks list<CR>", "n", { noremap = true, silent = true } },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", "n", { noremap = true, silent = true } },
-        { "<leader>FB", "<cmd>Telescope file_browser<CR>", "n", { noremap = true, silent = true } },
+        { "<leader>fe", "<cmd>Telescope file_browser<CR>", "n", { noremap = true, silent = true } },
         -- NOTE:
         -- 只有按键才能激活，所以无法使用tele命令
         { "<leader>fn", "<cmd>Telescope noice<CR>", "n", { noremap = true, silent = true } },
@@ -67,7 +67,7 @@ return {
             { noremap = true, silent = true, desc = "Telescope project" },
         },
         {
-            "<leader>fe",
+            "<leader>fs",
             "<cmd>lua require'telescope.builtin'.symbols{'nerd','emoji','gitemoji','julia'} <CR>",
             "n",
             { noremap = true, silent = true, desc = "Telescope symbols" },
@@ -208,6 +208,13 @@ return {
                     show_line = false,
                 },
                 file_browser = {
+                    layout_strategy = "horizontal",
+                    prompt_title = "   File Browser",
+                    layout_config = {
+                        height = 0.95,
+                        width = 0.95,
+                        preview_cutoff = 80,
+                    },
                     -- disables netrw and use telescope-file-browser in its place
                     hijack_netrw = true,
                     mappings = {
