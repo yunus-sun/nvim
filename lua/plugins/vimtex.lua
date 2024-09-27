@@ -9,8 +9,7 @@ return {
     -- ft = "tex",
     init = function()
         -- Forward Search
-        vim.g.vimtex_view_general_viewer = 'okular'
-        vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
+        vim.g.vimtex_view_method = 'zathura'
         -- Inverse Search only need to configure in the pdf
     end,
     config = function()
