@@ -75,7 +75,7 @@ return {
                 },
             },
             indent = {
-                enable = false,
+                enable = true,
                 disable = {},
             },
             yati = {
