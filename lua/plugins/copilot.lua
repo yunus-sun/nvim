@@ -6,14 +6,14 @@ return {
     config = function()
         require('copilot').setup({
             panel = {
-                enabled = false, -- for cmp copilot
+                enabled = true, -- cmp copilot need to set false
                 auto_refresh = false,
                 keymap = {
                     jump_prev = "[[",
                     jump_next = "]]",
                     accept = "<CR>",
                     refresh = "gr",
-                    open = "<M-CR>"
+                    open = "<M-l>"
                 },
                 layout = {
                     position = "bottom", -- | top | left | right
@@ -21,11 +21,11 @@ return {
                 },
             },
             suggestion = {
-                enabled = false, -- for cmp copilot
+                enabled = true, -- cmp copilot need to set false
                 auto_trigger = true,
                 debounce = 75,
                 keymap = {
-                    accept = "<M-l>",
+                    accept = "<M-CR>",
                     accept_word = false,
                     accept_line = false,
                     next = "<M-]>",
