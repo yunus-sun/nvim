@@ -96,21 +96,34 @@ return {
         end
     end,
     keys = {
-        { "<leader>dR", "<cmd>!python3 %<CR>", "n", { noremap = true, silent = true } },
-        { "<leader>dq", "<cmd>DapTerminate<CR>", "n", { noremap = true, silent = true } },
+        vim.api.nvim_set_keymap('n', '<leader>dR', '<cmd>!python3 %<CR>', { noremap = true, silent = true }),
+
+        vim.keymap.set('n', '<leader>da', ":RunScriptWithArgs "),
+
         vim.keymap.set('n', '<Leader>dd', function() require('dap').continue() end, { silent = true, desc = "debug continue" }),
+        vim.keymap.set('n', '<Leader>dk', function() require('dap').run_last() end, { silent = true, desc = "debug run_last" }),
+        vim.api.nvim_set_keymap('n', '<leader>dq', '<cmd>DapTerminate<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', '<Leader>dj', function() require('dap').run_to_cursor() end, { silent = true, desc = "debug run_to_cursor" }),
+
         vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { silent = true, desc = "debug step_over" }),
         vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { silent = true, desc = "debug step_into" }),
         vim.keymap.set('n', '<F12>', function() require('dap').step_out() end, { silent = true, desc = "debug step_out" }),
+
         vim.keymap.set('n', '<Leader>dt', function() require('dap').toggle_breakpoint() end, { silent = true, desc = "debug toggle_breakpoint" }),
-        -- vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end),
         vim.keymap.set('n', '<Leader>dT', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, { silent = true, desc = "debug tb with log" }),
+
+        vim.api.nvim_set_keymap('v', '<leader>de', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true, silent = true }),
+
         vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end, { silent = true, desc = "debug open repl" }),
-        vim.keymap.set('n', '<Leader>dk', function() require('dap').run_last() end, { silent = true, desc = "debug run_last" }),
         vim.keymap.set({'n', 'v'}, '<Leader>dv', function() require('dap.ui.widgets').hover() end, { silent = true, desc = "debug hover" }),
         vim.keymap.set({'n', 'v'}, '<Leader>dp', function() require('dap.ui.widgets').preview() end, { silent = true, desc = "debug preview" }),
+
         vim.keymap.set('n', '<Leader>df', function() local widgets = require('dap.ui.widgets') widgets.centered_float(widgets.frames) end, { silent = true, desc = "debug float frame" }),
-        vim.keymap.set('n', '<Leader>ds', function() local widgets = require('dap.ui.widgets') widgets.centered_float(widgets.scopes) end, { silent = true, desc = "debug float scope" }),
-        vim.keymap.set('n', '<leader>da', ":RunScriptWithArgs "),
+        vim.keymap.set('n', '<Leader>ds', function() local dapui = require("dapui") dapui.float_element("scopes") end, { silent = true, desc = "debug float scope" }),
+
+        vim.keymap.set('n', '<Leader>dS', function() local dapui = require("dapui") dapui.float_element("stack") end, { silent = true, desc = "debug float stack" }),
+        vim.keymap.set('n', '<Leader>db', function() local dapui = require("dapui") dapui.float_element("breakpoints") end, { silent = true, desc = "debug float breakpoints" }),
+        vim.keymap.set('n', '<Leader>dw', function() local dapui = require("dapui") dapui.float_element("watches") end, { silent = true, desc = "debug float watches" }),
+        vim.keymap.set('n', '<Leader>dc', function() local dapui = require("dapui") dapui.float_element("console") end, { silent = true, desc = "debug float console" }),
     }
 }
