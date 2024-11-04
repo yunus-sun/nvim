@@ -7,11 +7,12 @@ return {
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {
-        -- f,t,F,T with labels
         modes = {
+            -- f,t,F,T with labels
             char = {
+                enabled = true,
                 jump_labels = true
-            }
+            },
         },
     },
     -- stylua: ignore
