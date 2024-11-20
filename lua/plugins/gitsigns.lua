@@ -82,7 +82,7 @@ return {
                 map('n', '<leader>hb', gs.toggle_current_line_blame)
                 map('n', '<leader>hB', function() gs.blame_line{full=true} end)
                 -- diff
-                map('n', '<leader>hd', gs.diffthis)
+                map('n', '<leader>hd', ':lua require("gitsigns").diffthis()<CR>:set wrap<CR>:windo set wrap<CR>')
                 map('n', '<leader>hD', function() gs.diffthis('~') end)
                 map('n', '<leader>ht', gs.toggle_deleted)
 
