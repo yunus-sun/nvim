@@ -135,6 +135,10 @@ return {
                     show_help = "?",
                 },
             },
+            matchup = {
+                enable = true,
+                -- disable = {"c", "ruby"},
+            }
         })
 
 
