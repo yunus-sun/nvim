@@ -5,6 +5,7 @@ vim.g.mapleader = ","
 -- make sure to set `mapleader` before `lazy.nvim` so your mappings are correct, also need to before `keybindings.lua`
 
 local keymap = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = {noremap = true, silent = true}
 
 keymap('n', ';', ':', opts)
@@ -27,14 +28,25 @@ keymap('n', '<LEADER>ee', '<CMD>e $MYVIMRC<CR>', opts)
 -- end
 keymap('n', '<ESC>', '<CMD>nohlsearch<CR>', opts)
 
--- Cursor Movement
-keymap('', 'J', '5j', opts)
-keymap('', 'K', '5k', opts)
+-- Better movement
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+keymap('', '<Down>', '5j', opts)
+keymap('', '<Up>', '5k', opts)
 keymap('', 'H', '^', opts)
 keymap('', 'L', '$', opts)
--- keymap('', '<C-w>', '5w', opts) -- <C-w> toggles between the vertical and horizontal splits
--- keymap('', '<C-b>', '5b', opts) -- seems not useful due to flash or leap plugin & <C-b> is useful
-keymap('', '<C-J>', 'J', opts)
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- Move Lines
+map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- Globally Find and Replace
 keymap('n', '\\s', ':%s//g<left><left>', opts)
@@ -62,11 +74,10 @@ keymap('', '<LEADER>sK', '<C-w>K', opts)
 keymap('', '<LEADER>sH', '<C-w>H', opts)
 keymap('', '<LEADER>sL', '<C-w>L', opts)
 -- Resize the split window
--- maybe wrong
-keymap('', '<UP>', '<CMD>res +5<CR>', opts)
-keymap('', '<DOWN>', '<CMD>res -5<CR>', opts)
-keymap('', '<LEFT>', '<CMD>vertical resize-5<CR>', opts)
-keymap('', '<RIGHT>', '<CMD>vertical resize+5<CR>', opts)
+keymap('', '<C-Up>', '<cmd>res +5<CR>', opts)
+keymap('', '<C-Down>', '<cmd>res -5<CR>', opts)
+keymap('', '<C-Left>', '<cmd>vertical resize-5<CR>', opts)
+keymap('', '<C-Right>', '<cmd>vertical resize+5<CR>', opts)
 
 -- FIX: may need to change to linux
 -- Windows Copy and Paste
